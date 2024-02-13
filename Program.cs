@@ -39,22 +39,34 @@ foreach (var line in lines)
     }
 }
 
-public class Purchasebynumber
+public void menu()
 {
-  string applianceid == Console.ReadLine();
-      if (applianceid == number);
-      {
-          if (quantity > 0)
-          {
-              Console.WriteLine();
-          }
-
-          else (Console.WriteLine("The selected appliance is currently out of stock"));
-      }
-    else (Console.WriteLine("Entered number does not match any appliance ID"));
+    Console.WriteLine("Hello and welcome to Modern Appliances");
+    Console.WriteLIne("PLease enter a number to navigate the store");
+    Console.WriteLine("1: Check out our appliances");
+    Console.WriteLine("2: Serch appliances by brand");
+    Console.WriteLine("3: Search appliances by type");
+    Console.WriteLine("4: Generate a random list of appliances");
+    Console.WriteLine("5: Save your selection and exit");
 }
 
-public class Purchasebybrand
+public void Purchasebynumber()
+{
+    Console.WriteLine("1: Refrigerators");
+    Console.WriteLine("2: Vaccums");
+    Console.WriteLine("3: Microwaves");
+    Console.WriteLine("4: Dishwashers");
+    Console.WriteLine("Please enter your selection");
+    string applianceid == Console.ReadLine();
+      if (applianceid > 0 || applianceid < 4 );
+      {
+          switch ()
+      }
+    else (Console.WriteLine("Entered number does not match any appliance type"));
+    return;
+}
+
+public void Purchasebybrand()
 {
     string selectbrand == Console.ReadLIne();
     if (selectbrand == brand)
@@ -64,7 +76,7 @@ public class Purchasebybrand
     else (Console.WriteLine("Unkown brand"));
 }
 
-public class Random
+public void Random()
 {
     static Random rndapp = new Random();
     int rndamt == Console.ReadLine();
@@ -72,7 +84,7 @@ public class Random
     Console.WriteLine();
 }
 
-public class Exit
+public void Exit()
 {
     StreamWriter exit = new StreamWriter("C:\\appliances.txt");
     exit.StreamWriter($"ToString");
