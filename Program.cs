@@ -4,6 +4,16 @@ using CPRG211Assignment1;
 using CPRG211Assignment1.Properties;
 using System.Runtime.CompilerServices;
 
+public enum Options
+{
+    None,
+    Checkout = 1,
+    FindBrand = 2,
+    AppType = 3,
+    RandomList = 4,
+    Save&Exit = 5,
+}
+
 string[] lines = Resources.appliances.Split(char.Parse("\n"));
 
 List<Appliance> appliances = new List<Appliance>();
@@ -50,13 +60,17 @@ public void menu()
     Console.WriteLine("5: Save your selection and exit");
 }
 
-public void Purchasebynumber()
+public void BrowsebyType()
 {
     Console.WriteLine("1: Refrigerators");
     Console.WriteLine("2: Vaccums");
     Console.WriteLine("3: Microwaves");
     Console.WriteLine("4: Dishwashers");
-    Console.WriteLine("Please enter your selection");
+    Console.WriteLine("Please enter desired appliance type");
+
+    int appType;
+    bool parsedappType = int.TryParse(Console.ReadLine(), out appType);
+    
     string applianceid == Console.ReadLine();
       if (applianceid > 0 || applianceid < 4 );
       {
@@ -66,17 +80,18 @@ public void Purchasebynumber()
     return;
 }
 
-public void Purchasebybrand()
+public void BrowsebyBrand()
 {
+    Console.WriteLine("Please enter the name of the brand you would like to browse");
     string selectbrand == Console.ReadLIne();
-    if (selectbrand == brand)
+    if (selectbrand == Brand)
     {
-        Console.WriteLine();
+        switch ()
     }
-    else (Console.WriteLine("Unkown brand"));
+    else (Console.WriteLine("Unknown brand"));
 }
 
-public void Random()
+public void ranList()
 {
     static Random rndapp = new Random();
     int rndamt == Console.ReadLine();
@@ -86,9 +101,17 @@ public void Random()
 
 public void Exit()
 {
-    StreamWriter exit = new StreamWriter("C:\\appliances.txt");
-    exit.StreamWriter($"ToString");
+    
+    StreamWriter fileStream = File.CreateText("C:\\appliances.txt");
+
+    foreach (var appliance in appliances)
+    {
+        fileStream.WriteLine(appliance.FormatForFile());
+    }
+    
     exit.Close();
+
+    Console.WriteLine("Saving compleated!")
 }
 
 //Test to ensure appliance list is populated properly.
