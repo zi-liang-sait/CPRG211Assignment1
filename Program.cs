@@ -39,6 +39,46 @@ foreach (var line in lines)
     }
 }
 
+public class Purchasebynumber
+{
+  string applianceid == Console.ReadLine();
+      if (applianceid == number);
+      {
+          if (quantity > 0)
+          {
+              Console.WriteLine();
+          }
+
+          else (Console.WriteLine("The selected appliance is currently out of stock"));
+      }
+    else (Console.WriteLine("Entered number does not match any appliance ID"));
+}
+
+public class Purchasebybrand
+{
+    string selectbrand == Console.ReadLIne();
+    if (selectbrand == brand)
+    {
+        Console.WriteLine();
+    }
+    else (Console.WriteLine("Unkown brand"));
+}
+
+public class Random
+{
+    static Random rndapp = new Random();
+    int rndamt == Console.ReadLine();
+    int rndamt == rnd.Next(Appliance.Count);
+    Console.WriteLine();
+}
+
+public class Exit
+{
+    StreamWriter exit = new StreamWriter("C:\\appliances.txt");
+    exit.StreamWriter($"ToString");
+    exit.Close();
+}
+
 //Test to ensure appliance list is populated properly.
 //Not part of final solution.
 int lineNum = 1;
