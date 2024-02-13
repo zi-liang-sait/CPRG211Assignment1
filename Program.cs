@@ -11,7 +11,7 @@ public enum Options
     FindBrand = 2,
     AppType = 3,
     RandomList = 4,
-    Save&Exit = 5,
+    SaveExit = 5,
 }
 
 string[] lines = Resources.appliances.Split(char.Parse("\n"));
