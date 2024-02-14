@@ -201,6 +201,8 @@ List<Appliance> FindRandomAppliances(int number, List<Appliance> appliances)
 
 static void Save(List<Appliance> appliances)
 {
+    //Output file named differently to avoid overwriting original source file.
+    //Output file path: (Windows user folder)\repos\CPRG211Assignment1\bin\Debug\net8.0\Folder\appliances1.txt'
     using (StreamWriter sw = new StreamWriter("appliances1.txt"))
     {
         foreach (Appliance appliance in appliances)
