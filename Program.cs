@@ -87,14 +87,15 @@ void DisplayMenu(List<Appliance> appliances)
             BrowseByType(appliances);
             DisplayMenu(appliances);
             break;
-        case "4":  
+        case "4":
             BrowseRandomly(appliances);
             DisplayMenu(appliances);
             break;
         case "5":
             Save(appliances);
             break;
-        default: Console.WriteLine("Invalid menu option.");
+        default:
+            Console.WriteLine("Invalid menu option.");
             DisplayMenu(appliances);
             break;
     }
@@ -117,9 +118,9 @@ static Appliance? FindApplianceByNumber(string itemNumber, List<Appliance> appli
 {
     foreach (Appliance appliance in appliances)
     {
-        if (appliance.ItemNumber == itemNumber) 
-        { 
-            return appliance; 
+        if (appliance.ItemNumber == itemNumber)
+        {
+            return appliance;
         }
     }
     return null;
@@ -131,7 +132,7 @@ static List<Appliance> FindAppliancesByBrand(string brand, List<Appliance> appli
 
     foreach (Appliance appliance in appliances)
     {
-        if (appliance.Brand.ToLower() == brand.ToLower()) 
+        if (appliance.Brand.ToLower() == brand.ToLower())
         {
             foundAppliances.Add(appliance);
         }
@@ -228,6 +229,7 @@ static void BrowseByType(List<Appliance> appliances)
         case "1":
             Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors) or 4 (four doors):");
             option = Console.ReadLine();
+            Console.WriteLine("Matching refrigerators:");
             foreach (Appliance appliance in FindAppliancesByType(applianceType, option, appliances))
             {
                 Console.WriteLine(appliance);
@@ -236,6 +238,7 @@ static void BrowseByType(List<Appliance> appliances)
         case "2":
             Console.WriteLine("Enter battery voltage value. 18 V(low) or 24 V(high)");
             option = Console.ReadLine();
+            Console.WriteLine("Matching vaccums:");
             foreach (Appliance appliance in FindAppliancesByType(applianceType, option, appliances))
             {
                 Console.WriteLine(appliance);
@@ -244,6 +247,7 @@ static void BrowseByType(List<Appliance> appliances)
         case "3":
             Console.WriteLine("Room where the microwave will be installed: K (kitchen) or W (work site):");
             option = Console.ReadLine();
+            Console.WriteLine("Matching microwaves:");
             foreach (Appliance appliance in FindAppliancesByType(applianceType, option, appliances))
             {
                 Console.WriteLine(appliance);
@@ -252,6 +256,7 @@ static void BrowseByType(List<Appliance> appliances)
         case "4":
             Console.WriteLine("Enter the sound rating of the dishwasher: Qt (Quietest), Qr (Quieter), Qu(Quiet) or M (Moderate):");
             option = Console.ReadLine();
+            Console.WriteLine("Matching dishwasher:");
             foreach (Appliance appliance in FindAppliancesByType(applianceType, option, appliances))
             {
                 Console.WriteLine(appliance);
@@ -273,6 +278,7 @@ static void BrowseByBrand(List<Appliance> appliances)
         Console.WriteLine("No appliances found.");
         return;
     }
+    Console.WriteLine("Matching Applianaces:");
     foreach (Appliance appliance in foundAppliances)
     {
         Console.WriteLine(appliance);
@@ -294,7 +300,8 @@ void BrowseRandomly(List<Appliance> appliances)
         Console.WriteLine($"Invalid number of appliances. Min: 1, Max: {appliances.Count}.");
         return;
     }
-    foreach (Appliance appliance in FindRandomAppliances(number, appliances)) { 
+    foreach (Appliance appliance in FindRandomAppliances(number, appliances))
+    {
         Console.WriteLine(appliance);
     }
 }
